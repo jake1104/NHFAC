@@ -1,0 +1,14 @@
+   Compiling nhfac_core v0.1.0 (E:\01_coding\NHFAC\rust)
+error[E0596]: cannot borrow `self.fft_planner` as mutable, as it is behind a `&` reference
+  --> src\transforms.rs:15:19
+   |
+15 |         let fft = self.fft_planner.plan_fft_forward(n);
+   |                   ^^^^^^^^^^^^^^^^ `self` is a `&` reference, so the data it refers to cannot be borrowed as mutable
+   |
+help: consider changing this to be a mutable reference
+   |
+13 |     pub fn fft_forward(&mut self, signal: &[f32]) -> Vec<Complex<f32>> {
+   |                         +++
+
+For more information about this error, try `rustc --explain E0596`.
+error: could not compile `nhfac_core` (lib) due to 1 previous error

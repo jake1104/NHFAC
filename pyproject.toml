@@ -1,0 +1,32 @@
+[project]
+name = "nhfac"
+version = "0.1.0"
+description = "비선형 하틀리-푸리에 오디오 코덱 (Nonlinear Hartley-Fourier Audio Codec) - 고성능 오디오 압축 및 분석 도구"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "jake1104" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "cupy-cuda12x>=13.6.0",
+    "customtkinter>=5.2.2",
+    "librosa>=0.11.0",
+    "matplotlib>=3.10.8",
+    "numpy>=2.3.5",
+    "pesq>=0.0.4",
+    "pystoi>=0.4.1",
+    "scipy>=1.16.3",
+    "sounddevice>=0.5.3",
+    "soundfile>=0.13.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["python/nhfac"]
